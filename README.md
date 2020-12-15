@@ -108,6 +108,21 @@ Try now changing the submission you entered before by keeping the same rank and 
 
 ![Screenshot of Realtime Database - Update](3a.jpg)
 
+The last step is to implement the delete button code. The code is straightforward for this:
+
+```
+document.getElementById('delete').onclick = function(){
+          Ready();
+          firebase.database().ref('teams/'+rankV).remove();
+        }
+    </script>
+```
+
+To select data to delete, all you need to type in is the rank and click delete. It should look like this in your database:
+
+![Screenshot of Realtime Database - Delete](4a.jpg)
+
+And that's the end of this project. In the future I would like to add a table that automatically populates with all of the submitted data.
 
 ## Helpful Links
 
