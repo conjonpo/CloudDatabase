@@ -17,5 +17,6 @@ Before any of the foillwing steps are to be taken, first a project and database 
 
 ## Helpful Links
 
-* []()
-* []()
+* [Firebase Documentation](https://firebase.google.com/docs/database)
+* [https://www.youtube.com/watch?v=oxqVnWPg0So&list=LL&index=1](https://www.youtube.com/watch?v=oxqVnWPg0So&list=LL&index=1)
+* [https://stackoverflow.com/questions/44452392/show-firebase-data-in-a-html-table-with-javascript](https://stackoverflow.com/questions/44452392/show-firebase-data-in-a-html-table-with-javascript)
