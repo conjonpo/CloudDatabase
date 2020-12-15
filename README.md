@@ -40,6 +40,8 @@ The next step is to add the scripts needed for the database created to link to t
 
 Next a web app will need to be created in your project. To do that, go the project settings and then add web app. After creating the web app you then need to copy the code given to you, since this will link your project to the HTML file. 
 
+![Screenshot of Firebase settings](1a.jpg)
+
 ## Helpful Links
 
 * [Firebase Documentation](https://firebase.google.com/docs/database)
