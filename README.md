@@ -59,7 +59,25 @@ Once that is completed, the following code will set up the rest of what we need 
           }
 ```
 
-Once that is done, the code for the JavaScript code for the buttons can be added. 
+Once that is done, the code for the JavaScript code for the buttons can be added. We'll start with adding the code for the insert button. It looks as follows:
+
+```
+    document.getElementById('insert').onclick = function(){
+          Ready();
+          firebase.database().ref('teams/'+rankV).set({
+            Rank: rankV,
+            Team: teamV,
+            Conference: conV,
+            Record: recV
+          });
+        }
+```
+
+Click on your Realtime Database in Firebase and look at the data section. It should look like this after you've added some data through using your website:
+
+![Screenshot of Realtime Database - Insert}(2a.jpg)
+
+
 
 ## Helpful Links
 
