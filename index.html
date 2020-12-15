@@ -43,7 +43,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script> 
 
     <script id="Main">
           var firebaseConfig = {
@@ -60,26 +60,57 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
-var nameV, rollV, secV, genV;
+      var nameV, rollV, secV, genV;
 
-//assign variables to functions
-function Ready() {
-        nameV = document.getElementById('namebox').value;
-        rollV = document.getElementById('rollbox').value;
-        secV = document.getElementById('secbox').value;
-        genV = document.getElementById('genbox').value;
-    }
+      //assign variables to functions
+      function Ready(){
+              nameV = document.getElementById('namebox').value;
+              rollV = document.getElementById('rollbox').value;
+              secV = document.getElementById('secbox').value;
+              genV = document.getElementById('genbox').value;
+          }
 
-//insert
-document.getElementById('insert').onclick = function(){
-    Ready();
-    firebase.database().ref('student/'+rollV).set({
-        NameOfStudent: nameV,
-        RollNo: rollV,
-        Section: secV,
-        Gender: genV
-    });
-}
+      //insert
+      document.getElementById('insert').onclick = function(){
+          Ready();
+          firebase.database().ref('student/'+rollV).set({
+              NameOfStudent: nameV,
+              RollNo: rollV,
+              Section: secV,
+              Gender: genV
+          });
+        }
+
+        //select
+        document.getElementById('select').onclick = function(){
+          Ready();
+          firebase.database().ref('student/'+rollV).on('value', function(snapshot){
+            document,getElementById('namebox').value= snapshot.val().NameOfStudent;
+            document,getElementById('namebox').value= snapshot.val().Section;
+            document,getElementById('namebox').value= snapshot.val().Gender;
+          });
+        }
+
+        //update
+        document.getElementById('update').onclick = function(){
+          Ready();
+          firebase.database().ref('student/'+rollV).update({
+              NameOfStudent: nameV,
+              Section: secV,
+              Gender: genV
+          });
+        }
+
+        //delete
+        document.getElementById('delete').onclick = function(){
+          Ready();
+          firebase.database().ref('student/'+rollV).remove({
+              NameOfStudent: nameV,
+              Section: secV,
+              Gender: genV
+          });
+        }
+      
     </script>
 
     <!--<input onchange="updatePost(event)">-->
