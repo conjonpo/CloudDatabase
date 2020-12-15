@@ -41,6 +41,15 @@
     <button id="select">SELECT</button>
     <button id="update">UPDATE</button>
     <button id="delete">DELETE</button>
+    <br><br>
+
+    <table style="width:100%" id="ex-table">
+      <tr id="tr">
+        <th>Rank</th>
+        <th>Team</th> 
+        <th>Conference</th>
+        <th>Record</th>
+     </table> 
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
@@ -110,6 +119,25 @@
           firebase.database().ref('teams/'+rankV).remove();
         }
       
+    </script>
+
+    <script>
+      var database = firebase.database();
+      firebase.database().ref('teams/'+rankV).on('value', function(snapshot){
+          if(snapshot.exists()){
+              var content = '';
+              snapshot.forEach(function(data){
+                  var val = data.val();
+                  content +='<tr>';
+                  content += '<td>' + val.Rank + '</td>';
+                  content += '<td>' + val.Team + '</td>';
+                  content += '<td>' + val.Conference + '</td>';
+                  content += '<td>' + val.Rank + '</td>';
+                  content += '</tr>';
+              });
+              $('#ex-table').append(content);
+          }
+      });
     </script>
 
     <!--<input onchange="updatePost(event)">-->
