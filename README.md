@@ -77,8 +77,6 @@ Click on your Realtime Database in Firebase and look at the data section. It sho
 
 ![Screenshot of Realtime Database - Insert}(2a.jpg)
 
-
-
 ## Helpful Links
 
 * [Firebase Documentation](https://firebase.google.com/docs/database)
