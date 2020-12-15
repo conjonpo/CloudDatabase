@@ -10,11 +10,11 @@ Author, Conner Pohlsander
 * Node.js
 * Google Firebase
 
-Before any of the foillwing steps are to be taken, first a project and database need to be set up on [Google Firebase](https://console.firebase.google.com/). Then [node.js](https://nodejs.org/en/) needs to be downloaded for the environment to work correctly.
+Before any of the following steps are to be taken, first a project and database need to be set up on [Google Firebase](https://console.firebase.google.com/). Then [node.js](https://nodejs.org/en/) needs to be downloaded for the environment to work correctly.
 
 ## Execution
 
-The first step is to make a folder linked to a repository on GitHub and then create an HTML file. The first thing to do is add code to make the box inputs and buttons appear that are needed to submit the data to the database through the website. This code will accomplish that:
+The first step is to make a folder linked to a repository on GitHub and then create an HTML file in VS Code. The first thing to do is add code to make the box inputs and buttons appear that are needed to submit the data to the database through the website. This code will accomplish that:
 
 ```
     Rank  <input id="rankbox" type="text"></input> <br><br>
@@ -28,6 +28,17 @@ The first step is to make a folder linked to a repository on GitHub and then cre
     <button id="delete">DELETE</button>
     <br><br>
 ```
+
+The ids will come in handy later.
+
+The next step is to add the scripts needed for the database created to link to the HTML file just made. First these scripts need to be added:
+```
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+```
+
+Next a web app will need to be created in your project. To do that, go the project settings and then add web app. After creating the web app you then need to copy the code given to you, since this will link your project to the HTML file. 
 
 ## Helpful Links
 
