@@ -75,7 +75,9 @@ Once that is done, the code for the JavaScript code for the buttons can be added
 
 Click on your Realtime Database in Firebase and look at the data section. It should look like this after you've added some data through using your website:
 
-![Screenshot of Realtime Database - Insert}(2a.jpg)
+![Screenshot of Realtime Database - Insert](2a.jpg)
+
+
 
 ## Helpful Links
 
