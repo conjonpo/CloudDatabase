@@ -4,6 +4,8 @@ Author, Conner Pohlsander
 
 ## Overview
 
+Yet again, I have decided to do a college football related project. In this project I will be using a Cloud Database connected to a website to allow the user to be able to add rankings to the database and modify them if needs be.
+
 ## Development Environment
 
 * Visual Studio Code
@@ -41,6 +43,23 @@ The next step is to add the scripts needed for the database created to link to t
 Next a web app will need to be created in your project. To do that, go the project settings and then add web app. After creating the web app you then need to copy the code given to you, since this will link your project to the HTML file. 
 
 ![Screenshot of Firebase settings](1a.jpg)
+
+Once that is completed, the following code will set up the rest of what we need to make the website fully functional:
+
+```
+    <script> 
+      var rankV, teamV, conV, recV;
+
+      //assign variables to functions
+      function Ready(){
+              rankV = document.getElementById('rankbox').value;
+              teamV = document.getElementById('teambox').value;
+              conV = document.getElementById('conbox').value;
+              recV = document.getElementById('recbox').value;
+          }
+```
+
+Once that is done, the code for the JavaScript code for the buttons can be added. 
 
 ## Helpful Links
 
