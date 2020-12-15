@@ -25,14 +25,11 @@
     <!--<script defer src="/__/firebase/init.js?useEmulator=true"></script>
   -->
 
-    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
 
   </head>
   <body>
 
-    <h1 id="title">Read, Write, </h1>
+    <h1 id="title">Insert, select, update and delete data below</h1>
     
     Name     <input id="namebox" type="text"></input> <br><br>
     Roll No  <input id="rollbox" type="text"></input> <br><br>
@@ -43,6 +40,10 @@
     <button id="select">SELECT</button>
     <button id="update">UPDATE</button>
     <button id="delete">DELETE</button>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
 
     <script id="Main">
           var firebaseConfig = {
@@ -82,7 +83,5 @@ document.getElementById('insert').onclick = function(){
     </script>
 
     <!--<input onchange="updatePost(event)">-->
-
-    </script>
   </body>
 </html>
