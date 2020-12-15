@@ -31,6 +31,8 @@
 
     <h1>College Football Ranker</h1>
     <h3>Insert, select, update and delete data below</h3>
+
+    <p>To select data, input the rank and click select. To delete, only the rank is needed. To insert or update, please fill in all of the fields.</p>
     
     Rank  <input id="rankbox" type="text"></input> <br><br>
     Team     <input id="teambox" type="text"></input> <br><br>
@@ -118,12 +120,12 @@
           Ready();
           firebase.database().ref('teams/'+rankV).remove();
         }
-      
     </script>
-
+      
+    <!-- Table at bottom -->
     <script>
       var database = firebase.database();
-      firebase.database().ref('teams/'+rankV).on('value', function(snapshot){
+      database.ref('teams/'+rankV).once('value', function(snapshot){
           if(snapshot.exists()){
               var content = '';
               snapshot.forEach(function(data){
@@ -132,14 +134,15 @@
                   content += '<td>' + val.Rank + '</td>';
                   content += '<td>' + val.Team + '</td>';
                   content += '<td>' + val.Conference + '</td>';
-                  content += '<td>' + val.Rank + '</td>';
+                  content += '<td>' + val.Record + '</td>';
                   content += '</tr>';
               });
               $('#ex-table').append(content);
           }
       });
-    </script>
+  </script>
 
-    <!--<input onchange="updatePost(event)">-->
+    <p>I couldn't get this table to work properly.</p>
+
   </body>
 </html>
