@@ -77,6 +77,36 @@ Click on your Realtime Database in Firebase and look at the data section. It sho
 
 ![Screenshot of Realtime Database - Insert](2a.jpg)
 
+Next is to add the code for the select button:
+
+```
+document.getElementById('select').onclick = function(){
+          Ready();
+          firebase.database().ref('teams/'+rankV).on('value', function(snapshot){
+            document.getElementById('teambox').value= snapshot.val().Team;
+            document.getElementById('conbox').value= snapshot.val().Conference;
+            document.getElementById('recbox').value= snapshot.val().Record;
+          });
+        }
+```
+
+Try just typing in the rank and then click select. This should show all the data you just inputed in the other text boxes.
+
+We then add the code for the update button, which is similar to the insert button code:
+```
+document.getElementById('update').onclick = function(){
+          Ready();
+          firebase.database().ref('teams/'+rankV).update({
+            Team: teamV,
+            Conference: conV,
+            Record: recV
+          });
+        }
+```
+
+Try now changing the submission you entered before by keeping the same rank and changing the text in the other fields. After clicking the update button on the webpage, you should see the changes in your database.
+
+![Screenshot of Realtime Database - Update](3a.jpg)
 
 
 ## Helpful Links
